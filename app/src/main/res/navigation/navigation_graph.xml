@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/navigationHome">
+
+    <fragment
+        android:id="@+id/navigationComic"
+        android:name="com.example.comik.ui.comic.ComicFragment"
+        android:label="ComicFragment" />
+    <fragment
+        android:id="@+id/navigationFavorite"
+        android:name="com.example.comik.ui.favorite.FavoriteFragment"
+        android:label="FavoriteFragment" />
+    <fragment
+        android:id="@+id/navigationSetting"
+        android:name="com.example.comik.ui.setting.SettingFragment"
+        android:label="SettingFragment" />
+    <fragment
+        android:id="@+id/navigationHome"
+        android:name="com.example.comik.ui.home.HomeFragment"
+        android:label="HomeFragment" />
+</navigation>
