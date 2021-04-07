@@ -4,4 +4,10 @@
     <string name="title_comic">Comic</string>
     <string name="title_favorite">Favorite</string>
     <string name="title_setting">Setting</string>
+
+    <string name="text_character">Characters</string>
+    <string name="text_series">Series</string>
+    <string name="text_event">Events</string>
+    <string name="text_store">Stories</string>
+    <string name="text_creator">Creators</string>
 </resources>
