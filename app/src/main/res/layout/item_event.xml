@@ -6,7 +6,7 @@
     android:layout_margin="@dimen/dp_8">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardImageComic"
+        android:id="@+id/cardImageEvent"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:cardCornerRadius="@dimen/dp_8"
@@ -19,6 +19,7 @@
             android:id="@+id/imageEvent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:adjustViewBounds="true"
             android:contentDescription="@null" />
     </androidx.cardview.widget.CardView>
 
@@ -32,5 +33,5 @@
         android:textSize="@dimen/sp_14"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardImageComic" />
+        app:layout_constraintTop_toBottomOf="@+id/cardImageEvent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
