@@ -10,4 +10,5 @@ interface ComicRepository {
     fun insertFavorite(comic: Comic): Completable
     fun deleteFavorite(comic: Comic): Completable
     fun isFavorite(id: String): Single<Boolean>
+    fun getComics(): Observable<List<Comic>>
 }
