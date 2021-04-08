@@ -10,4 +10,5 @@
     <string name="text_event">Events</string>
     <string name="text_store">Stories</string>
     <string name="text_creator">Creators</string>
+    <string name="text_search">Year</string>
 </resources>
