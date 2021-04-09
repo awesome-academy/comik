@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/imageBanner"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:contentDescription="@null"
-    android:scaleType="fitXY" />
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="banner"
+            type="com.example.comik.data.model.Comic" />
+    </data>
+
+    <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/imageBanner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:contentDescription="@null"
+        app:cropStatus="@{false}"
+        app:image="@{banner.thumbnail.path}" />
+</layout>

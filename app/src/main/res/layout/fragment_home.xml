@@ -29,6 +29,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:orientation="horizontal"
+                app:data="@{homeVM.comic}"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toTopOf="@+id/guideTop"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -37,14 +38,33 @@
                 tools:listitem="@layout/item_banner" />
 
             <View
+                android:id="@+id/viewGradientBottom"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_50"
+                android:background="@drawable/bg_gradient_bottom"
+                app:layout_constraintBottom_toBottomOf="@+id/guideTop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+                android:id="@+id/scrollingBanner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/viewGradientBottom"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:spi_dotSelectedColor="@android:color/white" />
+
+            <View
                 android:id="@+id/viewTop"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="@drawable/bg_black_radius_50"
-                app:layout_constraintBottom_toBottomOf="@+id/guideTop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHeight_percent="0.03"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scrollingBanner" />
+
 
             <ImageButton
                 android:id="@+id/imageButtonCharacter"
@@ -55,7 +75,7 @@
                 android:src="@drawable/ic_character"
                 app:layout_constraintEnd_toStartOf="@+id/imageButtonStories"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/guideTop" />
+                app:layout_constraintTop_toBottomOf="@+id/viewTop" />
 
             <TextView
                 android:id="@+id/textCharacter"
@@ -79,7 +99,7 @@
                 android:src="@drawable/ic_store"
                 app:layout_constraintEnd_toStartOf="@+id/imageButtonSeries"
                 app:layout_constraintStart_toEndOf="@+id/imageButtonCharacter"
-                app:layout_constraintTop_toBottomOf="@+id/guideTop" />
+                app:layout_constraintTop_toBottomOf="@+id/viewTop" />
 
             <TextView
                 android:id="@+id/textStories"
@@ -103,7 +123,7 @@
                 android:src="@drawable/ic_series"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageButtonStories"
-                app:layout_constraintTop_toBottomOf="@+id/guideTop" />
+                app:layout_constraintTop_toBottomOf="@+id/viewTop" />
 
             <TextView
                 android:id="@+id/textSeries"
@@ -191,6 +211,7 @@
                 android:layout_marginStart="@dimen/dp_8"
                 android:layout_marginTop="@dimen/dp_12"
                 android:orientation="horizontal"
+                app:data="@{homeVM.creator}"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

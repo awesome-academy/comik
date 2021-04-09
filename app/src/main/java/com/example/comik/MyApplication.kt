@@ -17,7 +17,8 @@ class MyApplication : Application() {
                     networkModule,
                     apiModule,
                     repoEventModule,
-                    viewModelModule
+                    viewModelModule,
+                    repoCreatorModule
                 )
             )
         }
