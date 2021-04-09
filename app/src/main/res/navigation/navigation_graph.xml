@@ -19,5 +19,31 @@
     <fragment
         android:id="@+id/navigationHome"
         android:name="com.example.comik.ui.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/actionHomeFragmentToSeeMoreFragment"
+            app:destination="@+id/seeMoreFragment" />
+        <action
+            android:id="@+id/actionHomeFragmentToListComicFragment"
+            app:destination="@+id/listComicFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seeMoreFragment"
+        android:name="com.example.comik.ui.seemore.SeeMoreFragment"
+        android:label="SeeMoreFragment">
+        <argument
+            android:name="type"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/listComicFragment"
+        android:name="com.example.comik.ui.listcomic.ListComicFragment"
+        android:label="ListComicFragment">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="type"
+            app:argType="string" />
+    </fragment>
 </navigation>
