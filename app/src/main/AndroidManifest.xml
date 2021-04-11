@@ -12,7 +12,8 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/splash"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Comik">
+        android:theme="@style/Theme.Comik"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".ui.main.MainActivity"
             android:theme="@style/SplashTheme">
