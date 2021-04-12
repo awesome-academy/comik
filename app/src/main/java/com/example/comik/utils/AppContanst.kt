@@ -8,6 +8,7 @@ object APIConfig {
     const val IMAGE = "/portrait_xlarge.jpg"
     const val IMAGE_NOT_AVAILABLE =
         "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"
+    const val FORMAT_COMIC = "comic"
 }
 
 object BUNDLE {

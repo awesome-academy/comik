@@ -11,4 +11,5 @@ interface ComicRepository {
     fun deleteFavorite(comic: Comic): Completable
     fun isFavorite(id: String): Single<Boolean>
     fun getComics(): Observable<List<Comic>>
+    fun getComicByYear(format: String, year: Int): Observable<List<Comic>>
 }

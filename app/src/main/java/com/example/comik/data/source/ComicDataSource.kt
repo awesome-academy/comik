@@ -16,5 +16,6 @@ interface ComicDataSource {
 
     interface Remote {
         fun getComics(): Observable<ComicResponse>
+        fun getComicsByYear(format: String, year: Int): Observable<ComicResponse>
     }
 }
