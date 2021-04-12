@@ -17,7 +17,8 @@ class ComicRepositoryImpl(
 
     override fun isFavorite(id: String) = local.isFavorite(id)
 
-    override fun getComics(): Observable<List<Comic>> = remote.getComics().map {
-        it.data.results
-    }
+    override fun getComics(): Observable<List<Comic>> = remote.getComics().map { it.data.results }
+
+    override fun getComicByYear(format: String, year: Int): Observable<List<Comic>> =
+        remote.getComicsByYear(format, year).map { it.data.results }
 }

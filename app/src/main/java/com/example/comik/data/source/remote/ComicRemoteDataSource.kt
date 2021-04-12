@@ -8,4 +8,7 @@ class ComicRemoteDataSource(
 ) : ComicDataSource.Remote {
 
     override fun getComics() = apiService.getComics()
+
+    override fun getComicsByYear(format: String, year: Int) =
+        apiService.getComicsByYear(format, year)
 }

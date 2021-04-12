@@ -11,4 +11,9 @@
     <string name="text_store">Stories</string>
     <string name="text_creator">Creators</string>
     <string name="text_search">Year</string>
+    <string name="text_hint_search">Enter year</string>
+    <string name="text_choose_year">Choose year</string>
+
+    <string name="action_set">Set</string>
+    <string name="action_cancel">Cancel</string>
 </resources>
