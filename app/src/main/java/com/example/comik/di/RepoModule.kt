@@ -29,4 +29,10 @@ val repositoryModule = module {
     single<EventRepository> { EventRepositoryImpl(get()) }
     single<CreatorsDataSource> { CreatorRemoteDataSource(get()) }
     single<CreatorRepository> { CreatorRepositoryImpl(get()) }
+    single<CharactersDataSource> { CharacterRemoteDataSource(get()) }
+    single<CharacterRepository> { CharacterRepositoryImpl(get()) }
+    single<StoriesDataSource> { StoryRemoteDataSource(get()) }
+    single<StoryRepository> { StoryRepositoryImpl(get()) }
+    single<SeriesDataSource> { SeriesRemoteDataSource(get()) }
+    single<SeriesRepository> { SeriesRepositoryImpl(get()) }
 }
