@@ -1,13 +1,13 @@
 package com.example.comik.data.source.local
 
 import com.example.comik.data.model.Comic
-import com.example.comik.data.source.ComicDataSource
+import com.example.comik.data.source.ComicsDataSource
 import com.example.comik.data.source.local.database.dao.ComicDao
 import io.reactivex.rxjava3.core.Single
 
 class ComicLocalDataSource(
     private val comicDao: ComicDao
-) : ComicDataSource.Local {
+) : ComicsDataSource.Local {
 
     override fun getFavorites() = comicDao.getFavorites()
 

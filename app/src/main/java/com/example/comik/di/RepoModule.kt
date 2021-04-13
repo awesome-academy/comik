@@ -2,15 +2,11 @@ package com.example.comik.di
 
 import androidx.room.Room
 import com.example.comik.data.repository.*
-import com.example.comik.data.source.ComicDataSource
-import com.example.comik.data.source.CreatorDataSource
-import com.example.comik.data.source.EventDataSource
+import com.example.comik.data.source.*
 import com.example.comik.data.source.local.ComicLocalDataSource
 import com.example.comik.data.source.local.database.AppDatabase
 import com.example.comik.data.source.local.database.AppDatabase.Companion.DATABASE_NAME
-import com.example.comik.data.source.remote.ComicRemoteDataSource
-import com.example.comik.data.source.remote.CreatorRemoteDataSource
-import com.example.comik.data.source.remote.EventRemoteDataSource
+import com.example.comik.data.source.remote.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
@@ -25,18 +21,12 @@ val dbModule = module {
     single { get<AppDatabase>().comicDao() }
 }
 
-val repoComicModule = module {
-    single<ComicDataSource.Local> { ComicLocalDataSource(get()) }
-    single<ComicDataSource.Remote> { ComicRemoteDataSource(get()) }
+val repositoryModule = module {
+    single<ComicsDataSource.Local> { ComicLocalDataSource(get()) }
+    single<ComicsDataSource.Remote> { ComicRemoteDataSource(get()) }
     single<ComicRepository> { ComicRepositoryImpl(get(), get()) }
-}
-
-val repoEventModule = module {
-    single<EventDataSource> { EventRemoteDataSource(get()) }
+    single<EventsDataSource> { EventRemoteDataSource(get()) }
     single<EventRepository> { EventRepositoryImpl(get()) }
-}
-
-val repoCreatorModule = module {
-    single<CreatorDataSource> { CreatorRemoteDataSource(get()) }
+    single<CreatorsDataSource> { CreatorRemoteDataSource(get()) }
     single<CreatorRepository> { CreatorRepositoryImpl(get()) }
 }

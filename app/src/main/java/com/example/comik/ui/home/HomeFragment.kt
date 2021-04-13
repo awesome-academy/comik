@@ -16,7 +16,7 @@ import com.example.comik.utils.BUNDLE.BUNDLE_CHARACTER
 import com.example.comik.utils.BUNDLE.BUNDLE_CREATOR
 import com.example.comik.utils.BUNDLE.BUNDLE_EVENT
 import com.example.comik.utils.BUNDLE.BUNDLE_SERIES
-import com.example.comik.utils.BUNDLE.BUNDLE_STORE
+import com.example.comik.utils.BUNDLE.BUNDLE_STORY
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -56,7 +56,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), View.OnClickListener {
             imageButtonEventNext -> directFragment(BUNDLE_EVENT)
             imageButtonCreatorNext -> directFragment(BUNDLE_CREATOR)
             imageButtonCharacter -> directFragment(BUNDLE_CHARACTER)
-            imageButtonStories -> directFragment(BUNDLE_STORE)
+            imageButtonStories -> directFragment(BUNDLE_STORY)
             imageButtonSeries -> directFragment(BUNDLE_SERIES)
         }
     }

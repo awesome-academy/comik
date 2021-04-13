@@ -1,11 +1,11 @@
 package com.example.comik.data.repository
 
 import com.example.comik.data.model.Event
-import com.example.comik.data.source.EventDataSource
+import com.example.comik.data.source.EventsDataSource
 import io.reactivex.rxjava3.core.Observable
 
 class EventRepositoryImpl(
-    private val remote: EventDataSource
+    private val remote: EventsDataSource
 ) : EventRepository {
 
     override fun getEvents(): Observable<List<Event>> {

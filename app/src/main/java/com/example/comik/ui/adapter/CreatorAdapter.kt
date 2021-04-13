@@ -28,7 +28,7 @@ class CreatorAdapter(
 
         override fun bindData(item: Creator) {
             super.bindData(item)
-            itemCreatorBinding.creator = item
+            itemCreatorBinding.item = item
         }
     }
 }

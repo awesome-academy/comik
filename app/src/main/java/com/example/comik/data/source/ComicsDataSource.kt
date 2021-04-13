@@ -6,7 +6,7 @@ import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Single
 
-interface ComicDataSource {
+interface ComicsDataSource {
     interface Local {
         fun getFavorites(): Observable<List<Comic>>
         fun insertFavorite(comic: Comic): Completable

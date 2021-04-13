@@ -16,5 +16,5 @@ object BUNDLE {
     const val BUNDLE_SERIES = "BUNDLE_SERIES"
     const val BUNDLE_EVENT = "BUNDLE_EVENT"
     const val BUNDLE_CREATOR = "BUNDLE_CREATOR"
-    const val BUNDLE_STORE = "BUNDLE_STORE"
+    const val BUNDLE_STORY = "BUNDLE_STORY"
 }

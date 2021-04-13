@@ -28,7 +28,7 @@ class EventAdapter(
 
         override fun bindData(item: Event) {
             super.bindData(item)
-            itemEventBinding.event = item
+            itemEventBinding.item = item
         }
     }
 }
