@@ -1,50 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
             name="item"
-            type="com.example.comik.data.model.Creator" />
+            type="com.example.comik.data.model.Character" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/dp_250"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_8">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardImageCreator"
+            android:id="@+id/cardImageCharacter"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:cardCornerRadius="@dimen/dp_8"
-            app:layout_constraintDimensionRatio="2:3"
-            app:layout_constraintHeight_percent="0.8"
+            app:layout_constraintDimensionRatio="5:6"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageCreator"
+                android:id="@+id/imageCharacter"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:adjustViewBounds="true"
                 android:contentDescription="@null"
+                android:scaleType="fitXY"
                 app:cropStatus="@{false}"
-                app:image="@{item.thumbnail.path}" />
+                app:image="@{item.thumbnail.path}"
+                tools:src="@tools:sample/avatars" />
         </androidx.cardview.widget.CardView>
 
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginTop="@dimen/dp_4"
+            android:background="@color/color_thunder_bird"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardImageCharacter" />
+
         <TextView
-            android:id="@+id/textCreator"
+            android:id="@+id/textEvent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_4"
             android:gravity="center"
-            android:text="@{item.fullName}"
+            android:text="@{item.name}"
             android:textColor="@android:color/white"
             android:textSize="@dimen/sp_14"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardImageCreator" />
+            app:layout_constraintTop_toBottomOf="@+id/viewLine" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

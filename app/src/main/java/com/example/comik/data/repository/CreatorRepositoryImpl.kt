@@ -1,11 +1,11 @@
 package com.example.comik.data.repository
 
 import com.example.comik.data.model.Creator
-import com.example.comik.data.source.CreatorDataSource
+import com.example.comik.data.source.CreatorsDataSource
 import io.reactivex.rxjava3.core.Observable
 
 class CreatorRepositoryImpl(
-    private val remote: CreatorDataSource
+    private val remote: CreatorsDataSource
 ) : CreatorRepository {
 
     override fun getCreators(): Observable<List<Creator>> = remote.getCreators().map {

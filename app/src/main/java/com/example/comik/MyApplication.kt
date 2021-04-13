@@ -13,12 +13,10 @@ class MyApplication : Application() {
             modules(
                 listOf(
                     dbModule,
-                    repoComicModule,
                     networkModule,
                     apiModule,
-                    repoEventModule,
                     viewModelModule,
-                    repoCreatorModule
+                    repositoryModule
                 )
             )
         }

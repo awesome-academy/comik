@@ -4,7 +4,7 @@
     <data>
 
         <variable
-            name="event"
+            name="item"
             type="com.example.comik.data.model.Event" />
     </data>
 
@@ -31,7 +31,7 @@
                 android:contentDescription="@null"
                 android:scaleType="fitXY"
                 app:cropStatus="@{false}"
-                app:image="@{event.thumbnail.path}" />
+                app:image="@{item.thumbnail.path}" />
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_4"
             android:gravity="center"
-            android:text="@{event.title}"
+            android:text="@{item.title}"
             android:textColor="@android:color/white"
             android:textSize="@dimen/sp_14"
             app:layout_constraintEnd_toEndOf="parent"

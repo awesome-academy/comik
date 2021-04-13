@@ -1,12 +1,12 @@
 package com.example.comik.data.repository
 
 import com.example.comik.data.model.Comic
-import com.example.comik.data.source.ComicDataSource
+import com.example.comik.data.source.ComicsDataSource
 import io.reactivex.rxjava3.core.Observable
 
 class ComicRepositoryImpl(
-    private val local: ComicDataSource.Local,
-    private val remote: ComicDataSource.Remote
+    private val local: ComicsDataSource.Local,
+    private val remote: ComicsDataSource.Remote
 ) : ComicRepository {
 
     override fun getFavorites() = local.getFavorites()
