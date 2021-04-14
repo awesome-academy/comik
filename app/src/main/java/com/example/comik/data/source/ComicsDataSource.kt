@@ -11,7 +11,7 @@ interface ComicsDataSource {
         fun getFavorites(): Observable<List<Comic>>
         fun insertFavorite(comic: Comic): Completable
         fun deleteFavorite(comic: Comic): Completable
-        fun isFavorite(id: String): Single<Boolean>
+        fun isFavorite(id: Int): Single<Boolean>
     }
 
     interface Remote {
@@ -22,5 +22,6 @@ interface ComicsDataSource {
         fun getComicsBySeries(seriesId: Int): Observable<ComicResponse>
         fun getComicsByStory(storyId: Int): Observable<ComicResponse>
         fun getComicsByCreator(creatorId: Int): Observable<ComicResponse>
+        fun getComic(comicId: Int): Observable<ComicResponse>
     }
 }

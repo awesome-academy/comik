@@ -18,5 +18,5 @@ interface ComicDao {
     fun deleteFavorite(comic: Comic): Completable
 
     @Query("SELECT * FROM comic WHERE id =:id")
-    fun isFavorite(id: String): Single<List<Comic>>
+    fun isFavorite(id: Int): Single<List<Comic>>
 }

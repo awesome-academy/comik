@@ -15,6 +15,6 @@ class ComicLocalDataSource(
 
     override fun deleteFavorite(comic: Comic) = comicDao.deleteFavorite(comic)
 
-    override fun isFavorite(id: String): Single<Boolean> =
+    override fun isFavorite(id: Int): Single<Boolean> =
         comicDao.isFavorite(id).map { it.isNotEmpty() }
 }

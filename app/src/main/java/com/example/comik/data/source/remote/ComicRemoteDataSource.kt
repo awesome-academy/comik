@@ -22,4 +22,6 @@ class ComicRemoteDataSource(
     override fun getComicsByStory(storyId: Int) = apiService.getComicsByStory(storyId)
 
     override fun getComicsByCreator(creatorId: Int) = apiService.getComicsByCreators(creatorId)
+
+    override fun getComic(comicId: Int) = apiService.getComic(comicId)
 }

@@ -1,6 +1,7 @@
 package com.example.comik.di
 
 import com.example.comik.ui.comic.ComicViewModel
+import com.example.comik.ui.detail.DetailViewModel
 import com.example.comik.ui.home.HomeViewModel
 import com.example.comik.ui.listcomic.ListComicViewModel
 import com.example.comik.ui.seemore.SeeMoreViewModel
@@ -12,4 +13,5 @@ val viewModelModule = module {
     viewModel { ComicViewModel(get()) }
     viewModel { SeeMoreViewModel(get(), get(), get(), get(), get()) }
     viewModel { ListComicViewModel(get()) }
+    viewModel { DetailViewModel(get()) }
 }

@@ -1,6 +1,7 @@
 package com.example.comik.ui.comic
 
 import android.app.Dialog
+import androidx.navigation.fragment.findNavController
 import com.example.comik.R
 import com.example.comik.base.BaseFragment
 import com.example.comik.data.model.Comic
@@ -68,5 +69,7 @@ class ComicFragment : BaseFragment<FragmentComicBinding>() {
     }
 
     private fun clickItemComic(comic: Comic) {
+        val action = ComicFragmentDirections.actionComicFragmentToDetailFragment(comic.id)
+        findNavController().navigate(action)
     }
 }
