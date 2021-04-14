@@ -31,7 +31,6 @@
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
                 android:contentDescription="@null"
-                app:cropStatus="@{false}"
                 app:image="@{comic.thumbnail.path}"
                 tools:src="@tools:sample/avatars" />
         </androidx.cardview.widget.CardView>
@@ -62,6 +61,7 @@
             android:text="@{comic.description}"
             android:textColor="@android:color/white"
             android:textSize="@dimen/sp_12"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/cardImageComic"
             app:layout_constraintTop_toBottomOf="@+id/textTitle"
             tools:text="@tools:sample/lorem" />
