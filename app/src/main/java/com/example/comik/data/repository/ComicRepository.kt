@@ -12,4 +12,5 @@ interface ComicRepository {
     fun isFavorite(id: String): Single<Boolean>
     fun getComics(): Observable<List<Comic>>
     fun getComicByYear(format: String, year: Int): Observable<List<Comic>>
+    fun getComicsByType(type: String, id: Int): Observable<List<Comic>>
 }
