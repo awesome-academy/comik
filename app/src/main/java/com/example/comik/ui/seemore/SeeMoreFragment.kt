@@ -8,6 +8,7 @@ import com.example.comik.data.model.*
 import com.example.comik.databinding.FragmentSeemoreBinding
 import com.example.comik.ui.adapter.*
 import com.example.comik.utils.BUNDLE.BUNDLE_CHARACTER
+import com.example.comik.utils.BUNDLE.BUNDLE_CREATOR
 import com.example.comik.utils.BUNDLE.BUNDLE_EVENT
 import com.example.comik.utils.BUNDLE.BUNDLE_SERIES
 import com.example.comik.utils.BUNDLE.BUNDLE_STORY
@@ -46,17 +47,27 @@ class SeeMoreFragment : BaseFragment<FragmentSeemoreBinding>() {
     }
 
     private fun clickItemCharacter(character: Character) {
+        directToListComicFragment(BUNDLE_CHARACTER, character.id)
     }
 
     private fun clickItemEvent(event: Event) {
+        directToListComicFragment(BUNDLE_EVENT, event.id)
     }
 
     private fun clickItemStory(story: Story) {
+        directToListComicFragment(BUNDLE_STORY, story.id)
     }
 
     private fun clickItemCreator(creator: Creator) {
+        directToListComicFragment(BUNDLE_CREATOR, creator.id)
     }
 
     private fun clickItemSeries(series: Series) {
+        directToListComicFragment(BUNDLE_SERIES, series.id)
+    }
+
+    private fun directToListComicFragment(type: String, id: Int) {
+        val action = SeeMoreFragmentDirections.actionSeeMoreFragmentToListComicFragment(id, type)
+        findNavController().navigate(action)
     }
 }

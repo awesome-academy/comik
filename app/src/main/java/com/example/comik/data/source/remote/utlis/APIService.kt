@@ -3,6 +3,7 @@ package com.example.comik.data.source.remote.utlis
 import com.example.comik.data.model.*
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface APIService {
@@ -29,4 +30,19 @@ interface APIService {
 
     @GET("stories")
     fun getStories(): Observable<StoryResponse>
+
+    @GET("characters/{character_id}/comics")
+    fun getComicsByCharacter(@Path("character_id") characterId: Int): Observable<ComicResponse>
+
+    @GET("events/{event_id}/comics")
+    fun getComicsByEvent(@Path("event_id") eventId: Int): Observable<ComicResponse>
+
+    @GET("series/{series_id}/comics")
+    fun getComicsBySeries(@Path("series_id") seriesId: Int): Observable<ComicResponse>
+
+    @GET("creators/{creator_id}/comics")
+    fun getComicsByCreators(@Path("creator_id") creatorId: Int): Observable<ComicResponse>
+
+    @GET("stories/{story_id}/comics")
+    fun getComicsByStory(@Path("story_id") storyId: Int): Observable<ComicResponse>
 }
