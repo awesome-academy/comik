@@ -19,7 +19,7 @@ class ComicRepositoryImpl(
 
     override fun deleteFavorite(comic: Comic) = local.deleteFavorite(comic)
 
-    override fun isFavorite(id: String) = local.isFavorite(id)
+    override fun isFavorite(id: Int) = local.isFavorite(id)
 
     override fun getComics(): Observable<List<Comic>> = remote.getComics().map { it.data.results }
 
@@ -34,4 +34,7 @@ class ComicRepositoryImpl(
             BUNDLE_CREATOR -> remote.getComicsByCreator(id)
             else -> remote.getComicsByStory(id)
         }.map { it.data.results }
+
+    override fun getComic(comicId: Int): Observable<Comic> =
+        remote.getComic(comicId).map { it.data.results.first() }
 }

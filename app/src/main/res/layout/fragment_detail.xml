@@ -1,6 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+
+        <variable
+            name="detailVM"
+            type="com.example.comik.ui.detail.DetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerPoster"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_350"
+            android:orientation="horizontal"
+            app:data="@{detailVM.comic.image}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_350"
+            android:contentDescription="@null"
+            app:image="@{detailVM.comic.thumbnail.path}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:visible="@{detailVM.isEmpty}" />
+
+        <ImageButton
+            android:id="@+id/imageButtonBack"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_8"
+            android:background="@null"
+            android:contentDescription="@null"
+            android:scaleType="center"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/viewGradientBottom"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_50"
+            android:background="@drawable/bg_gradient_bottom"
+            app:layout_constraintBottom_toBottomOf="@+id/recyclerPoster"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+            android:id="@+id/scrollingBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/recyclerPoster"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:spi_dotSelectedColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:text="@{detailVM.comic.title}"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/imageButtonFavorite"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scrollingBanner" />
+
+        <TextView
+            android:id="@+id/textTitleModified"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_4"
+            android:text="@string/text_modified"
+            android:textColor="@color/color_cc_white"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+
+        <TextView
+            android:id="@+id/textModified"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_4"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:text="@{detailVM.comic.modified}"
+            android:textColor="@color/color_cc_white"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintEnd_toStartOf="@+id/imageButtonFavorite"
+            app:layout_constraintStart_toEndOf="@+id/textTitleModified"
+            app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+
+        <TextView
+            android:id="@+id/textTitlePageCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_4"
+            android:text="@string/text_page_count"
+            android:textColor="@color/color_cc_white"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTitleModified" />
+
+        <TextView
+            android:id="@+id/textPageCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_4"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:text="@{detailVM.comic.pageCount.toString()}"
+            android:textColor="@color/color_cc_white"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintEnd_toStartOf="@+id/imageButtonFavorite"
+            app:layout_constraintStart_toEndOf="@+id/textTitlePageCount"
+            app:layout_constraintTop_toBottomOf="@+id/textModified" />
+
+        <ImageButton
+            android:id="@+id/imageButtonFavorite"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:background="@null"
+            android:contentDescription="@null"
+            android:scaleType="center"
+            android:src="@{detailVM.isFavorite() ? @drawable/ic_heart : @drawable/ic_favorite}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textTitle"
+            app:layout_constraintTop_toBottomOf="@+id/scrollingBanner" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:gravity="center"
+            android:text="@string/title_favorite"
+            android:textColor="@color/color_cc_white"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textTitle"
+            app:layout_constraintTop_toBottomOf="@+id/imageButtonFavorite" />
+
+        <TextView
+            android:id="@+id/textDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:text="@{detailVM.comic.description}"
+            android:textColor="@color/color_cc_white"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textPageCount" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

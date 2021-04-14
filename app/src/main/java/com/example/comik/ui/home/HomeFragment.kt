@@ -79,5 +79,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), View.OnClickListener {
     }
 
     private fun clickItemBanner(comic: Comic) {
+        val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(comic.id)
+        findNavController().navigate(action)
     }
 }

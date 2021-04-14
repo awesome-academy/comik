@@ -9,8 +9,9 @@ interface ComicRepository {
     fun getFavorites(): Observable<List<Comic>>
     fun insertFavorite(comic: Comic): Completable
     fun deleteFavorite(comic: Comic): Completable
-    fun isFavorite(id: String): Single<Boolean>
+    fun isFavorite(id: Int): Single<Boolean>
     fun getComics(): Observable<List<Comic>>
     fun getComicByYear(format: String, year: Int): Observable<List<Comic>>
     fun getComicsByType(type: String, id: Int): Observable<List<Comic>>
+    fun getComic(comicId: Int): Observable<Comic>
 }

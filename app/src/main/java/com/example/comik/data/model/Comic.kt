@@ -28,18 +28,22 @@ data class Comic(
     @Ignore
     @SerializedName("resourceURI")
     val resourceURI: String?,
-    @Ignore
+    @ColumnInfo(name = "thumbnail")
     @SerializedName("thumbnail")
-    val thumbnail: Image?
+    val thumbnail: Image?,
+    @Ignore
+    @SerializedName("images")
+    val image: List<Image>?
 ) {
 
-    constructor(id: Int, title: String, description: String) : this(
+    constructor(id: Int, title: String, description: String, thumbnail: Image) : this(
         id,
         title,
         description,
         null,
         null,
         null,
+        thumbnail,
         null
     )
 

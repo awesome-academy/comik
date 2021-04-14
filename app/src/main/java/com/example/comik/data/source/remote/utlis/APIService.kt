@@ -45,4 +45,7 @@ interface APIService {
 
     @GET("stories/{story_id}/comics")
     fun getComicsByStory(@Path("story_id") storyId: Int): Observable<ComicResponse>
+
+    @GET("comics/{comic_id}")
+    fun getComic(@Path("comic_id") comicId: Int): Observable<ComicResponse>
 }
