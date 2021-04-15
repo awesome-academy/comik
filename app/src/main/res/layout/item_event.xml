@@ -41,7 +41,7 @@
             android:layout_marginTop="@dimen/dp_4"
             android:gravity="center"
             android:text="@{item.title}"
-            android:textColor="@android:color/white"
+            android:textColor="?attr/textBold"
             android:textSize="@dimen/sp_14"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
