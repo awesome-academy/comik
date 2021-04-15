@@ -15,7 +15,12 @@
     <string name="text_choose_year">Choose year</string>
     <string name="text_page_count">Page Count: </string>
     <string name="text_modified">Modified: </string>
+    <string name="text_about_app">About App</string>
+    <string name="text_share_app">Share app</string>
+    <string name="text_night_mode">Night Mode</string>
+    <string name="text_message_info">Developer: TrangNQ</string>
 
     <string name="action_set">Set</string>
     <string name="action_cancel">Cancel</string>
+    <string name="action_ok">OK</string>
 </resources>

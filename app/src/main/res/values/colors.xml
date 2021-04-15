@@ -12,4 +12,7 @@
     <color name="color_pastel_green">#77D353</color>
     <color name="color_coral">#FF9052</color>
     <color name="color_lilac_bush">#976DD0</color>
+    <color name="color_silver">#c5c5c5</color>
+    <color name="color_river_bed">#47525E</color>
+    <color name="color_mine_shaft">#222222</color>
 </resources>

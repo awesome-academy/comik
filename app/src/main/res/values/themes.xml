@@ -1,18 +1,34 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
     <style name="Theme.Comik" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Primary brand color. -->
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@android:color/black</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="textBold">@color/color_mine_shaft</item>
+        <item name="textNormal">@color/color_river_bed</item>
+        <item name="backgroundBottom">@color/color_silver</item>
+        <item name="backgroundView">@android:color/white</item>
+        <item name="backColor">@android:color/black</item>
+    </style>
+
+    <style name="DarkTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@android:color/black</item>
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@android:color/white</item>
-        <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@android:color/black</item>
-        <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="textBold">@android:color/white</item>
+        <item name="textNormal">@color/color_cc_white</item>
+        <item name="backgroundBottom">@color/color_shark</item>
+        <item name="backgroundView">@android:color/black</item>
+        <item name="backColor">@android:color/white</item>
     </style>
 
     <style name="SplashTheme" parent="Theme.Comik">
