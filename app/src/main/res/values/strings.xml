@@ -4,6 +4,7 @@
     <string name="title_comic">Comic</string>
     <string name="title_favorite">Favorite</string>
     <string name="title_setting">Setting</string>
+    <string name="title_internet">Internet Connection</string>
 
     <string name="text_character">Characters</string>
     <string name="text_series">Series</string>
@@ -23,4 +24,6 @@
     <string name="action_set">Set</string>
     <string name="action_cancel">Cancel</string>
     <string name="action_ok">OK</string>
+
+    <string name="msg_check_internet">Please check your internet connection!</string>
 </resources>
