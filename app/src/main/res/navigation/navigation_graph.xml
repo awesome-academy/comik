@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
     app:startDestination="@id/navigationHome">
 
@@ -23,7 +24,14 @@
     <fragment
         android:id="@+id/navigationSetting"
         android:name="com.example.comik.ui.setting.SettingFragment"
-        android:label="SettingFragment" />
+        android:label="SettingFragment" >
+        <action
+            android:id="@+id/actionSettingFragmentToMainActivity"
+            app:destination="@+id/mainActivity"
+            app:popUpTo="@+id/navigationSetting"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
     <fragment
         android:id="@+id/navigationHome"
         android:name="com.example.comik.ui.home.HomeFragment"
@@ -71,4 +79,9 @@
             android:name="idComic"
             app:argType="integer" />
     </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.comik.ui.main.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
 </navigation>
