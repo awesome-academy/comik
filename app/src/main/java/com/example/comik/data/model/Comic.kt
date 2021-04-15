@@ -36,7 +36,7 @@ data class Comic(
     val image: List<Image>?
 ) {
 
-    constructor(id: Int, title: String, description: String, thumbnail: Image) : this(
+    constructor(id: Int, title: String?, description: String?, thumbnail: Image?) : this(
         id,
         title,
         description,
